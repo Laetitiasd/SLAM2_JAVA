@@ -15,8 +15,21 @@ public class AppAdminVoxi {
 		utilisateurs.add(new Moderateur("BA", "Béchir", "azerty","bechir.ba@gmail.com", 2,"bba", 103));
 		utilisateurs.add(new Moderateur("ESSAMAMI", "Hamza", "azerty", "hamza.mami@free.fr",1, "hessa", 8));
 		
-		System.out.println(utilisateurs.getFirst());
+		//1//
+		 for (Utilisateur utilisateur : utilisateurs) {
+	            System.out.println("Nom : " + utilisateur.getNom() + ", Prénom : " + utilisateur.getPrenom());
+	        }
 		
+		 //2//
+		 
+		 for(Utilisateur utilisateur : utilisateurs) {
+			 int var = 0;
+			if(utilisateur.getEtat() == 1) {
+				var++;
+				System.out.println("Utilisateur connecté" + " "+ var);
+			}
+		 }
+		 
 		
 	}
 
