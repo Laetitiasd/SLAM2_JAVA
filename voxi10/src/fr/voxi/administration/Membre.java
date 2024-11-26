@@ -20,14 +20,10 @@ public class Membre extends Utilisateur {
 		this.bloque = false;
 	}
 
-	public String getVisuNotif() {
-		return visuNotif;
+	public String VisuNotif(String Alerte) {
+		return "Sa fonctionne";
 	}
-
-	public void setVisuNotif(String visuNotif) {
-		this.visuNotif = visuNotif;
-	}
-
+		
 	@Override
 	public String toString() {
 		return "Membre [bloque=" + bloque + ", visuNotif=" + visuNotif + "]";
@@ -35,6 +31,22 @@ public class Membre extends Utilisateur {
 	
 	public boolean bloque(Membre bloquer) {
 		return bloque = false;
+	}
+
+	@Override
+	public boolean seConnecter(String CO, String Reussi) {
+		
+		if(CO == this.getEmail() && Reussi == this.getMdp() && bloque == false) {
+			this.setEtat(CONNECTE);
+			return true;
+			
+		} else {
+			
+			return false;
+			
+		}
+		
+		
 	}
 
 	
