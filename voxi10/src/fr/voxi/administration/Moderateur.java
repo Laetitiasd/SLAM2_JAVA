@@ -49,6 +49,16 @@ public class Moderateur extends Utilisateur implements Administrateur{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public boolean seConnecter(String CO, String Reussi) {
+		
+		if(CO == this.getEmail() || CO == this.getLogin() && Reussi == this.getMdp() ) {
+			this.setEtat(CONNECTE);
+			return true;
+		}
+		return false;
+	}
 	
 	
 	
